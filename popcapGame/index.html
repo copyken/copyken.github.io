@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Popcap Game</title>
+    <meta charset="utf-8">
+    <title>Popcap Game</title>
+    <style media="screen">
+      body {
+        margin: 0;
+        padding: 0;
+        background: #1e2d28;
+        text-align: center;
+      }
+      #cav {
+        margin-top: 30px;
+        background: white;
+      }
+    </style>
+    <script type="text/javascript">
+      var oImg = new Image();
+      oImg.src = "frog.png";
+      window.onload = function (){
+        var cav = document.getElementById("cav");
+        var gc = cav.getContext("2d");
+        var acc = document.querySelector('.account');
+        var ball = [];
+        var angle = 0;
+        var bullet = [];
+        var bingo = 0;
+        var bs = 0;
+
+        ball.push({
+          x : 250,
+          y : 0,
+          a : 0,
+        });
+        setInterval(function(){
+          ball.push({
+            x : 250,
+            y : 0,
+            a : 0
+          });
+        }, 700);
+
+        setInterval(function (){
+          /*小球运动路线*/
+          gc.clearRect(0,0,500,480);
+          gc.beginPath();
+          gc.arc(250,220,220,-90*Math.PI/180,Math.PI,false);
+          gc.arc(180,220,150,-Math.PI,20*Math.PI/180,false);
+          gc.stroke();
+          //gc.closePath();
+          /*终点*/
+          gc.beginPath();
+          gc.fillStyle = "#008B00";
+          gc.arc(320,270,15,0,2*Math.PI);
+          gc.fill();
+          gc.closePath();
+          /*小球运动*/
+          for(var i=0;i<ball.length;i++){
+            if(ball[i].a >=470){
+              alert('游戏结束！总得分：' + bingo);
+              window.location.reload();
+            }
+            gc.save();
+            gc.beginPath();
+            //改变球颜色
+            var color = function (){
+              var n = "";
+              for(var i=0;i<6;i++){
+                n = n + "" + Math.floor(Math.random()*10);
+              }
+              n = "#" + n;
+              return n;
+            };
+            gc.fillStyle = color();
+            if(ball[i].a<270){
+              ball[i].x=220*Math.sin(ball[i].a*Math.PI/180)+250;
+              ball[i].y=220-220*Math.cos(ball[i].a*Math.PI/180);
+              ball[i].a++;
+            }else{
+              ball[i].x=150*Math.sin(ball[i].a*Math.PI/180)+180;
+              ball[i].y=220-150*Math.cos(ball[i].a*Math.PI/180);
+              ball[i].a = ball[i].a+220/150;
+            }
+            gc.arc(ball[i].x,ball[i].y,15,0,2*Math.PI);
+            gc.fill();
+            gc.closePath();
+            gc.restore();
+          }
+
+          //弹珠青蛙
+          gc.save();
+          gc.translate(180 , 210);
+          gc.rotate(angle);
+          gc.translate(-40 , -40)
+          gc.drawImage(oImg , 0 , 0);
+          gc.restore();
+          /*子弹发射运动*/
+          for(var i=0;i<bullet.length;i++){
+            gc.beginPath();
+            gc.fillStyle = "black";
+            gc.arc(bullet[i].x,bullet[i].y,15,0,2*Math.PI);
+            gc.fill();
+            gc.closePath();
+            bullet[i].x = bullet[i].x + bullet[i].sX;
+            bullet[i].y = bullet[i].y + bullet[i].sY;
+          }
+          /*子弹与球碰撞判定*/
+          for(var i=0;i<bullet.length;i++){
+            for(var j=0;j<ball.length;j++){
+              if(crash(bullet[i].x,bullet[i].y,ball[j].x,ball[j].y)){
+                bullet.splice(i,1);
+                ball.splice(j,1);
+                bingo++;
+                break;
+              }
+            }
+          }
+
+          gc.fillStyle = "black";
+          gc.beginPath();
+          gc.font = "20px impact";
+          var str = "子弹 ：" + bs +"　击中 ：" + bingo;
+          var w = gc.measureText(str).width;
+          var h = 10;
+          gc.fillText(str , 10 , 30);
+          gc.closePath();
+        },80);
+        /*青蛙方向随鼠标方向*/
+        cav.onmousemove = function(ev){
+          var mouseX,mouseY;
+          var a,b,c;
+          mouseX = ev.clientX - this.offsetLeft;
+          mouseY = ev.clientY - this.offsetTop;
+          a = mouseX - 180;
+          b = mouseY - 210;
+          c = Math.sqrt(a*a+b*b);
+          if(a>0 && b<0){
+            angle = Math.asin(a/c);
+          }else if(a>0 && b>0){
+            angle = Math.asin(b/c) + 0.5*Math.PI;
+          }else if(a<0 && b>0){
+            angle = -Math.asin(b/c) - 0.5*Math.PI;
+          }else if(a<0 && b<0){
+            angle = -Math.asin(-a/c);
+          }
+          //alert(mouseX + ":" + mouseY);
+          //alert(angle/Math.PI*180);
+        };
+        cav.onclick = function (ev){
+          var a,b,c,mouseX,mouseY;
+          mouseX = ev.clientX - this.offsetLeft;
+          mouseY = ev.clientY - this.offsetTop;
+          a = mouseX - 180;
+          b = mouseY - 210;
+          c = Math.sqrt(a*a+b*b);
+          bullet.push({
+            speed : 15,
+            x : 180,
+            y : 210,
+            sX : 15*a/c,
+            sY : 15*b/c
+          });
+          bs++;
+        };
+        /*子弹与球碰撞*/
+        function crash(x1,y1,x2,y2){
+          var s = Math.sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
+          if(s <= 25){
+            return true;
+          }
+          return false;
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <canvas id="cav" width="500" height="480"></canvas>
+  </body>
+</html>
