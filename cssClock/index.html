@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>2D test</title>
+    <style id="css">
+      * { margin: 0; padding: 0;}
+      body { width: 100%; background: #66CCFF;text-align: center;}
+      .box { width: 299px; height: 300px; margin: 20px auto 0;border: 10px solid black;
+             background: white; border-radius: 50%;position: relative;}
+      .point { width: 20px; height: 20px; border-radius: 20px; background: black;
+               position: absolute; left: 140px;top: 140px;}
+      .clock li:nth-of-type(5n+1) { width: 4px; height: 20px;}
+      .clock li { width: 2px; height: 10px; background: black;position: absolute;
+             top: 0;left: 148px;list-style: none; -webkit-transform-origin: center 150px;
+             -moz-transform-origin: center 150px;}
+      .hour { width: 10px; height: 60px;position: absolute; top: 90px; left: 145px;
+              background: black; -webkit-transform-origin: bottom; -moz-transform-origin: bottom; border-radius: 10px;}
+      .min { width: 6px; height: 120px;position: absolute; top: 30px; left: 147px;
+             background: black; -webkit-transform-origin: bottom; -moz-transform-origin: bottom; border-radius: 6px;}
+      .sec { width: 2px; height: 130px;position: absolute; top: 20px; left: 149px;
+             background: blue; -webkit-transform-origin: bottom; -moz-transform-origin: bottom;}
+      .time { margin-top: 30px;font-size: 20px;}
+    </style>
+    <script type="text/javascript">
+      window.onload = function (){
+        var box = document.getElementsByClassName('box')[0];
+        var clock = document.getElementsByClassName('clock')[0];
+        var oCss = document.getElementById('css');
+        var addCss = "";
+        var oLi = "";
+        var oHour = document.getElementsByClassName('hour')[0];
+        var oMin = document.getElementsByClassName('min')[0];
+        var oSec = document.getElementsByClassName('sec')[0];
+        var oTime = document.getElementsByClassName('time')[0];
+        var date,hour,min,sec;
+
+        for(var i=0;i<60;i++){
+          addCss += ".clock li:nth-of-type("+ (i+1) +") { -webkit-transform: rotate("+ i*6 +"deg);-moz-transform: rotate("+ i*6 +"deg);}";
+
+          oLi += "<li></li>";
+        }
+        clock.innerHTML = oLi;
+        oCss.innerHTML += addCss;
+
+        timing();
+        setInterval(timing , 1000);
+
+        function timing(){
+          date = new Date();
+          hour = date.getHours();
+          min = date.getMinutes();
+          sec = date.getSeconds();
+          oSec.style.WebkitTransform = "rotate("+ sec*6 +"deg)";
+          oSec.style.MozTransform = "rotate("+ sec*6 +"deg)";
+          oMin.style.WebkitTransform = "rotate("+ min*6 +"deg)";
+          oMin.style.MozTransform = "rotate("+ min*6 +"deg)";
+          oHour.style.WebkitTransform = "rotate("+ (hour*30 + min/60*30) +"deg)";
+          oHour.style.MozTransform = "rotate("+ (hour*30 + min/60*30) +"deg)";
+          oTime.innerHTML = (hour<10?"0"+hour:hour) + ":" + (min<10?"0"+min:min) + ":" + (sec<10?"0"+sec:sec);
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <div class="time"></div>
+    <div class="box">
+      <ul class="clock"></ul>
+      <div class="hour"></div>
+      <div class="min"></div>
+      <div class="sec"></div>
+      <div class="point"></div>
+    </div>
+
+  </body>
+</html>

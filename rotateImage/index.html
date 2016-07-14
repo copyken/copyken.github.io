@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rotate Images</title>
+  </head>
+  <style id="rt_css">
+    * { margin: 0; padding: 0;}
+    body { background: #BFEFFF; height: 1500px;}
+    li { list-style-type: none;}
+    .btn { text-align: center;margin-top: 20px;}
+    .wrap { width: 600px; height: 400px;margin: 10px auto 0;-webkit-perspective: 800px;}
+    .wrap li { width: 50px; height: 400px; overflow: hidden;position: absolute;}
+    /*.box1 { width: 50px; height: 400px; position: relative; -webkit-transform-style: preserve-3d;
+            transition: 1s; -webkit-transform-origin: center center -200px; float: left;}
+    .box1 li:nth-of-type(1) { background: url(images/img1.jpg) 0 0; top: 0; left: 0;}
+    .box1 li:nth-of-type(2) { background: url(images/img2.jpg) 0 0; top: -400px; left: 0; -webkit-transform-origin: bottom; -webkit-transform: rotateX(90deg);}
+    .box1 li:nth-of-type(3) { background: url(images/img3.jpg) 0 0; top: 400px; left: 0; -webkit-transform-origin: top; -webkit-transform: rotateX(-90deg);}
+    .box1 li:nth-of-type(4) { background: url(images/img4.jpg) 0 0; top: 0; left: 0; -webkit-transform-origin: bottom; -webkit-transform: translateZ(-400px);}
+    .box1 li:nth-of-type(5) { background: #3B3B3B 0 0; top: 0; left: 0; width: 400px; -webkit-transform-origin: left; -webkit-transform: rotateY(90deg);}
+    .box1 li:nth-of-type(6) { background: #3B3B3B 0 0; top: 0; left: 50px; width: 400px; -webkit-transform-origin: left; -webkit-transform: rotateY(90deg);}
+    .box1:hover { -webkit-transform: rotateX(360deg);}
+    .box2 { width: 50px; height: 400px; position: relative; -webkit-transform-style: preserve-3d;
+            transition: 1s; -webkit-transform-origin: center center -200px; float: left;}
+    .box2 li:nth-of-type(1) { background: url(images/img1.jpg) 0 0; top: 0; left: 0;}
+    .box2 li:nth-of-type(2) { background: url(images/img2.jpg) 0 0; top: -400px; left: 0; -webkit-transform-origin: bottom; -webkit-transform: rotateX(90deg);}
+    .box2 li:nth-of-type(3) { background: url(images/img3.jpg) 0 0; top: 400px; left: 0; -webkit-transform-origin: top; -webkit-transform: rotateX(-90deg);}
+    .box2 li:nth-of-type(4) { background: url(images/img4.jpg) 0 0; top: 0; left: 0; -webkit-transform-origin: bottom; -webkit-transform: translateZ(-400px);}
+    .box2 li:nth-of-type(5) { background: #3B3B3B 0 0; top: 0; left: 0; width: 400px; -webkit-transform-origin: left; -webkit-transform: rotateY(90deg);}
+    .box2 li:nth-of-type(6) { background: #3B3B3B 0 0; top: 0; left: 50px; width: 400px; -webkit-transform-origin: left; -webkit-transform: rotateY(90deg);}
+    .box2:hover { -webkit-transform: rotateX(360deg);}*/
+  </style>
+  <script type="text/javascript">
+    window.onload = function (){
+      var oWrap = document.getElementsByClassName("wrap")[0];
+      var rtCss = document.getElementById("rt_css");
+      var pBtn = document.getElementsByClassName("pre")[0];
+      var nBtn = document.getElementsByClassName("nxt")[0];
+      var piece = 15;
+      var gap = 600/piece;
+      var ys = 100;
+      var zIndex = 0;
+      var ri_n = 0;
+      var admit = true;
+      /*为各块图片旋转的子片添加动画*/
+      for(var i=0;i<piece;i++){
+        if(i<piece/2) {
+          zIndex++;
+        }else {
+          zIndex--;
+        }
+        oWrap.innerHTML += "<ul class='box" + (i+1) + "'><li></li><li></li><li></li><li></li><li></li><li></li></ul>";
+        rtCss.innerHTML += ".box"+ (i+1) +" {height: 400px; position: relative; -webkit-transform-style: preserve-3d;transition: 1s; -webkit-transform-origin: center center -200px; float: left;z-index:"+ zIndex +";}";
+        rtCss.innerHTML += ".box"+ (i+1) +" li:nth-of-type(1) { background: url(images/img1.jpg) "+ (-i*gap) +"px 0 no-repeat; background-size:600px 400px; top: 0; left: "+(i*gap)+"px;}";
+        rtCss.innerHTML += ".box"+ (i+1) +" li:nth-of-type(2) { background: url(images/img2.jpg) "+ (-i*gap) +"px 0 no-repeat; background-size:600px 400px; top: -400px; left: "+(i*gap)+"px; -webkit-transform-origin: bottom; -webkit-transform: rotateX(90deg);}";
+        rtCss.innerHTML += ".box"+ (i+1) +" li:nth-of-type(3) { background: url(images/img3.jpg) "+ (-i*gap) +"px 0 no-repeat; background-size:600px 400px; top: 400px; left: "+(i*gap)+"px; -webkit-transform-origin: top; -webkit-transform: rotateX(-90deg);}";
+        rtCss.innerHTML += ".box"+ (i+1) +" li:nth-of-type(4) { background: url(images/img4.jpg) "+ (-i*gap) +"px 0 no-repeat; background-size:600px 400px; top: 0; left: "+(i*gap)+"px; -webkit-transform: translateZ(-400px) rotateX(180deg);}";
+        rtCss.innerHTML += ".box"+ (i+1) +" li:nth-of-type(5) { background: #3B3B3B 0 0; top: 0; left: "+(i*gap)+"px; width: 400px; -webkit-transform-origin: left; -webkit-transform: rotateY(90deg);}";
+        rtCss.innerHTML += ".box"+ (i+1) +" li:nth-of-type(6) { background: #3B3B3B 0 0; top: 0; left: "+(i*gap+gap)+"px; width: 400px; -webkit-transform-origin: left; -webkit-transform: rotateY(90deg);}";
+        /*为最后一个子片添加结束事件*/
+        if(i+1 == piece){
+          var lastBox = document.getElementsByClassName("box"+(i+1))[0];
+          lastBox.addEventListener("webkitTransitionEnd" , function(){
+            admit = true;
+          } , false);
+        }
+      }
+      /*上一张事件*/
+      nBtn.onclick = function (){
+        if(admit){
+          admit = false;
+          ri_n++;
+          for(var i=0;i<piece;i++){
+            var oUl = oWrap.getElementsByClassName("box"+(i+1))[0];
+            oUl.style.transition = "500ms " + i*ys + "ms";
+            oUl.style.WebkitTransform = "rotateX("+ 90*ri_n +"deg)";
+          }
+        }
+      };
+      /*下一张事件*/
+      pBtn.onclick = function (){
+        if(admit){
+          admit = false;
+          ri_n--;
+          for(var i=0;i<piece;i++){
+            var oUl = oWrap.getElementsByClassName("box"+(i+1))[0];
+            oUl.style.transition = "500ms " + i*ys + "ms";
+            oUl.style.WebkitTransform = "rotateX("+ 90*ri_n +"deg)";
+          }
+        }
+      };
+    };
+  </script>
+  <body>
+    <div class="btn">
+      <button class="pre">上一张</button><button class="nxt">下一张</button>
+    </div>
+    <div class="wrap">
+    </div>
+  </body>
+</html>
