@@ -1,0 +1,505 @@
+body {
+	padding: 0;
+	cursor: default;
+	background: #fefaf6;
+}
+.no-margin {
+	margin: 0;
+}
+.no-padding {
+	padding: 0;
+}
+@font-face {
+	font-family: "Titillium Web";
+	src: url("Titillium-Web.ttf");
+}
+@font-face {
+	font-family: Ubuntu;
+	src: url("Ubuntu.ttf");
+}
+h1, h2, h3, h4 {
+	font-family: "Titillium Web";
+}
+h2 {
+	font-size: 35pt;
+}
+h3 {
+	font-size: 25pt;
+}
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+img {
+	max-width: 100%;
+}
+.whatis-beerpay , .how-works , .benefits , .beerpay-badge , .keep-touch {
+	
+	padding: 150px 15px;
+}
+.white {
+	color: white;
+}
+.salmon , a {
+	color: #f85d5d;
+}
+.bg-about .container h2, .bg-faqs .container h2, .bg-home .container h2, .bg-privacy .container h2, .bg-terms .container h2 {
+	color: #fff;
+	font-size: 25pt;
+	max-width: 500px;
+	font-family: 'Titillium Web',sans-serif;
+}
+.text-center {
+	text-align: center;
+}
+/*modal*/
+#myModal {
+	text-align: center;
+	font-family: Ubuntu,sans-serif;
+
+}
+#myModal .vertical-pos {
+	width: 400px;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	margin: -162px 0 0 -208px;
+}
+#myModal .modal-header {
+	padding: 0 15px;
+	background: #efeff0;
+	border-bottom: 1px solid #dcdcdd;
+	border-radius: 4px 4px 0 0;
+}
+#myModal .close {
+	position: relative;
+	z-index: 1100;
+}
+#myModal .modal-header .welcometext-center {
+	position: relative;
+}
+.welcometext-center .logo-beerpay-container {
+	position: absolute;
+	width: 74px;
+	height: 74px;
+	top: -37px;
+	left: 50%;
+	margin-left: -37px;
+	border-radius: 50%;
+	background: #ececee;
+	border: 1px solid #d2d2d2;
+	box-shadow: 0 0 5px rgba(0,0,0,.2);
+}
+.welcometext-center .logo-beerpay-container .logo-wrap {
+	width: 65px;
+	height: 65px;
+	display: block;
+	background: #fff;
+	border-radius: 50%;
+	border: 1px solid #d2d2d2;
+	margin: 3px 0 0 3px;
+}
+.welcometext-center .logo-beerpay-container img {
+	width: 50px;
+	margin: 7px 0 0 4px;
+}
+#myModal .modal-header p {
+	padding-top: 40px;
+	font-size: 20pt;
+	color: #ccc;
+	text-shadow: 1px 1px 0 #fff;
+	font-weight: 400;
+}
+#myModal .modal-body {
+	padding: 0 15px 15px 15px;
+}
+#myModal .modal-body .github-login-blurb {
+	margin: 20px 0;
+}
+#myModal .login-btn .btn-routed {
+	background: #F85D61;
+	color: #fff!important;
+	font-size: 16px;
+	font-weight: 300;
+	height: 52px;
+	line-height: 52px;
+	border-radius: 40px;
+	border: none;
+	padding: 0 20px;
+}
+#myModal .login-btn .btn-routed:hover{
+	background: #fb7171;
+}
+#myModal .login-btn img {
+	display: inline-block;
+	width: 16px;
+	padding-bottom: 3px;
+}
+#myModal .modal-body .github-login-blurb.disclaimer {
+	margin: 20px 0 45px 0;
+	font-size: 10.5pt;
+}
+#myModal .modal-body .disclaimer a:hover {
+	color: #f85d5d;
+}
+
+/*home*/
+.bg-home {
+	position: relative;
+	background: url(../images/bg-home-laptop.jpg) center top no-repeat;
+	background-size: cover;
+}
+.title-home {
+	margin-bottom: 0;
+	padding-top: 5%;
+	font-family: Ubuntu;
+	font-weight: 800;
+	font-style: italic;
+	letter-spacing: 1px;
+	font-size: 80pt;
+}
+.bg-home .container>p {
+	max-width: 300px;
+}
+.bg-home .container button {
+	background: #f85d5d;
+	border: 1px solid #df5252;
+	margin-top: 25px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: #eee;
+	font-size: 20pt;
+}
+.bg-home .container button:hover {
+ 	background: #fb7171;
+ 	border: 1px solid #fb7171;
+}
+.bg-home .container button:focus {
+	outline: none;
+}
+.bg-home .pay-opensource {
+	color: #fff;
+	font-size: 12pt;
+	font-weight: 700;
+	font-style: italic;
+	font-family: Ubuntu,sans-serif;
+}
+.bg-home .next {
+	color: white;
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	animation: 1.5s arrowDown infinite;
+	margin-left: -18px;
+}
+.bg-home .next a:focus {
+	text-decoration: none;
+}
+@keyframes arrowDown {
+	0%, 100% {
+		-webkit-transform: translateY(0);;
+		transform: translateY(0);
+	}
+	80% {
+		-webkit-transform: translateY(-15px);;
+		transform: translateY(-15px);
+	}
+}
+.next a:hover {
+	text-decoration: none;
+}
+@font-face {
+	font-family: 'arrowDown';
+    src: url('arrowDown.eot'); /* IE9*/
+    src: url('arrowDown.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('arrowDown.woff') format('woff'), /* chrome、firefox */
+    url('arrowDown.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('arrowDown.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.ico-arrow-down {
+    font-family:"arrowDown" !important;
+    font-size:36px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    color: #fff;
+    font-weight: bold;
+}
+/*nav*/
+#navigation {
+	border: none;
+	border-radius: 0;
+	background: #515c71;
+	margin: 0;
+	min-height: 60px;
+}
+#navigation .collapse-toogle {
+	display: none;
+}
+.navbar-header img {
+	width: 36px;
+	display: block;
+	margin-top: -2px;
+	margin-left: 10px;
+}
+#navigation .navbar-nav .active {
+	background: #444d5e;
+	color: white;
+}
+#navigation .navbar-nav li {
+	height: 60px;
+	line-height: 60px;
+}
+#navigation .navbar-nav li:hover {
+	
+}
+#navigation .navbar-nav li:hover a {
+	background: #444d5e;
+	color: #fff;
+}
+#navigation .navbar-nav li a {
+	color: #eee;
+	font-weight: lighter;
+	letter-spacing: 1px;
+	font-size: 11pt;
+	height: 60px;
+	line-height: 30px;
+}
+#navigation .navbar-nav .btn-explore-nav a {
+	color: #f5f800;
+}
+#navigation .navbar-nav .btn-explore-nav a:hover {
+	background: transparent;
+	color: #f5f800;
+	text-decoration: underline;
+}
+#navigation .btn-sign-up button {
+	letter-spacing: 1px;
+	border: 1px solid #444d5e;
+	color: #eee;
+	background: #f85d5d;
+	height: 46px;
+	line-height: 32px;
+	text-transform: uppercase;
+}
+#navigation .btn-sign-up button:hover {
+	background: #fb7171;
+}
+#navigation .btn-sign-up button:focus {
+	outline: none;
+}
+#navigation .btn-mobile {
+	display: none;
+}
+/*what-is*/
+#what-is .whatis-beerpay {
+	padding: 90px 15px;
+}
+.whatis-beerpay .col-md-6:nth-child(1) {
+	height: 315px;
+}
+.whatis-beerpay .col-md-6:nth-child(1) img {
+	height: 315px;
+}
+#what-is .whatis-beerpay h2 {
+	margin-bottom: 0;
+	font-size: 35pt;
+	font-weight: lighter;
+}
+#what-is .whatis-beerpay h3 {
+	margin-top: 10px;
+	font-size: 25pt;
+}
+/*how works*/
+.how-works {
+	background: #2b2f3e;
+	color: #fff;
+	padding-top: 100px;
+	padding-bottom: 150px;
+}
+#featured h2 {
+	margin: 0 0 25px;
+}
+#featured p , #featured li {
+	letter-spacing: 1px;
+}
+#featured .image-radius {
+	border-radius: 4px;
+}
+#featured .text-center img {
+	width: 93px;
+}
+#featured .tip {
+	display: inline-block;
+	width: 13px;
+	height: 13px;
+	background: url(../images/beerpay-logo-white.svg) no-repeat;
+	background-size: 13px 13px;
+	margin-right: 10px;
+}
+/*why uses*/
+@font-face {
+	font-family: 'iconf-benefits';
+    src: url('../fonts/tip/iconf-benefits.eot'); /* IE9*/
+    src: url('../fonts/tip/iconf-benefits.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/tip/iconf-benefits.woff') format('woff'), /* chrome、firefox */
+    url('../fonts/tip/iconf-benefits.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../fonts/tip/iconf-benefits.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconf-benefits {
+    font-family:"iconf-benefits" !important;
+    font-size:52pt;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    color: #555;
+}
+.benefits h2 {
+	margin-top: 0;
+	margin-bottom: 70px;
+}
+.benefits p {
+	margin-bottom: 30px;
+}
+/**/
+.beerpay-badge {
+	background: #2b2f3e;
+	color: #fff;
+	padding: 50px 0;
+}
+.beerpay-badge .img-container img {
+	width: 200px;
+	height: 200px;
+}
+/*.beerpay-badge .stage {
+	width: 400px;
+	height: 400px;
+	-webkit-perspective: 1000px;
+	perspective: 1000px;
+}*/
+.beerpay-badge .img-container {
+	margin-top: 80px;
+	margin-bottom: 100px;
+}
+.beerpay-badge .img-container img {
+	width: 250px;
+	height: 250px;
+}
+.beerpay-badge .img-container img:nth-child(1) {
+	-webkit-transform: rotateZ(20deg);
+	transform: rotateZ(20deg);
+	z-index: 2;
+	
+}
+.beerpay-badge .img-container img:nth-child(2) {
+	-webkit-transform: rotateY(180deg) rotateZ(20deg);
+	transform: rotateY(180deg) rotateZ(20deg);
+	z-index: 1;
+	margin-left: -80px;
+}
+/*contact*/
+@font-face {font-family: 'iconf-contact';
+    src: url('../fonts/contact/iconf-contact.eot'); /* IE9*/
+    src: url('../fonts/contact/iconf-contact.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/contact/iconf-contact.woff') format('woff'), /* chrome、firefox */
+    url('../fonts/contact/iconf-contact.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../fonts/contact/iconf-contact.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconf-contact {
+    font-family:"iconf-contact" !important;
+    font-size:60px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    top: 0;
+    left: 14px;
+}
+.keep-touch {
+	padding: 100px 0;
+}
+.keep-touch li {
+	display: inline-block;
+	margin: 0 10px 20px;
+}
+.keep-touch li a {
+	display: block;
+	width: 90px;
+	height: 90px;
+	border: 1px solid #cfd3db;
+	border-radius: 50%;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 80px;
+	position: relative;
+	transition: 0.2s;
+	opacity: 0.7;
+}
+.keep-touch .weibo {
+	color: #5d7bba;
+}
+.keep-touch .wechat {
+	color: #1da1f2;
+}
+.keep-touch .googleplus {
+	color: #db4437;
+}
+.keep-touch .googleplus i {
+	top: 5px;
+}
+.keep-touch .github {
+	color: #e50256;
+}
+.keep-touch li a:focus {
+	text-decoration: none;
+}
+.keep-touch li a:hover {
+	text-decoration: none;
+	border: 1px solid #515c71;
+	opacity: 1;
+	transform: translateY(-5px);
+}
+/*footer*/
+footer {
+	background: #444;
+	padding: 20px 0;
+}
+footer small {
+	font-weight: 300;
+	letter-spacing: 0.5;
+	line-height: 12pt;
+	color: #ccc;
+}
+footer .tip {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	background: url(../images/beerpay-logo-white.svg) no-repeat;
+	background-size: 12px 12px;
+}
+.menu-foot {
+	text-align: right;
+	float: right;
+}
+.menu-foot li {
+	display: inline-block;
+	margin: 0 7.5px;
+}
+.menu-foot li a {
+	color: #fff;
+}
+.menu-foot img:nth-child(1) {
+	width: 12px;
+}
+.menu-foot img:nth-child(2) {
+	width: 52px;
+}
+.copyright {
+	float: left;
+}
+.beerpay-foot-mark {
+	font-family: Ubuntu;
+	font-weight: 700;
+	font-style: italic;
+}

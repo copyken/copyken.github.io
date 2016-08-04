@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<title>Beerpay - Pay Beer.</title>
+		<link rel="icon" type="images/png" href="images/favicon.png">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/mobile.css">
+	</head>
+	<body>
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog vertical-pos">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <div class="welcometext-center">
+		        	<div class="logo-beerpay-container">
+		        		<div class="logo-wrap">
+		        			<img src="images/beer.png" alt="">
+		        		</div>
+		        	</div>
+		        	<p>Welcome!</p>
+		        </div>
+		      </div>
+		      <div class="modal-body">
+		        <div class="github-login-blurb">
+		        	Beerpay allows developers to receive support for their Open source projects on GitHub.
+		        </div>
+		        <div class="login-btn">
+		        	<a href="#" class="btn btn-routed btn-red" role="button">
+		        		<img src="images/github.png" alt=""> Continue with GitHub
+		        	</a>
+		        </div>
+		        <div class="github-login-blurb disclaimer">
+		        	By clicking the signup button above, you agree to our<a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>
+		        </div>
+		      </div>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div>
+		<section class="container-fluid no-padding active">
+			<div class="bg-home">
+				<div class="container">
+					<h1 class="title-home">
+						<span class="white">beer</span><span class="salmon">pay</span>
+					</h1>
+					<h2>The way to support your Open Source projects in GitHub.</h2>
+					<p>
+						<button class="btn btn-lg" type="button" data-toggle="modal" data-target="#myModal">Start Now!</button>
+					</p>
+					<div class="pay-opensource">
+						pay beer, <span class="salmon">pay open source</span>
+					</div>
+					<div class="next">
+						<a href="#what-is"><i class="ico-arrow-down">&#xe626;</i></a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<nav id="navigation" class="navbar navbar-default">
+			<div class="container-fluid">
+				<button type="button" data-toggle="collapse" data-target="#collapse-id" class="collapse-toogle">
+					<img src="images/iconf-nav.png" alt="">
+				</button>
+				<div class="btn-sign-up btn-mobile">
+					<button class="btn btn-f" type="button" data-toggle="modal" data-target="#myModal"">START NOW!</button>
+				</div>
+				<div class="navbar-header">
+					<a href="#" class="navbar-brand">
+						<img src="images/beerpay-logo-white.svg" alt="brand">
+					</a>
+				</div>
+				<div class="collapse navbar-collapse" id="collapse-id">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#">Home</a></li>
+						<li><a href="#what-is">What's it</a></li>
+						<li><a href="#featured">How works</a></li>
+						<li><a href="#how-uses">Why uses</a></li>
+						<li><a href="#badge">Badge</a></li>
+						<li><a href="#contact">Contacts</a></li>
+						<li class="btn-explore-nav"><a href="#explores">Explores</a></li>
+						<li class="btn-sign-up btn-pc"><button class="btn" type="button" data-toggle="modal" data-target="#myModal"">START NOW!</button></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<section class="container " id="what-is">
+			<div class="row whatis-beerpay">
+				<div class="col-md-6 text-center">
+					<img src="images/beer.svg" alt="">
+				</div>
+				<div class="col-md-6">
+					<h2>What is Beerpay</h2>
+					<h3>Start getting support in your projects!</h3>
+					<p>
+						We know that open source it's free but that doesn't mean it has no cost.
+						<br>
+						We love open source
+					</p>
+				</div>
+			</div>
+		</section>
+		<section class="container-fluid how-works" id="featured">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<img src="images/victory.svg" alt="">
+						<h2>How Beerpay Works</h2>
+					</div>
+					<div class="col-md-6 col-sm-6">
+						<div class="row">
+							<div class="col-md-6 col-sm-12">
+								<h3>Givers</h3>
+								<p>
+									Use beerpay to motivate others to continue developing, also you can set 
+									<strong>Wishes</strong>
+									 (e.g. new features) for any projects and then use it!
+								</p>
+								<ul>
+									<li><i class="tip"></i>Support Projects</li>
+									<li><i class="tip"></i>Support existing Wishes</li>
+									<li><i class="tip"></i>Make Wishes for new features</li>
+									<li><i class="tip"></i>Make Wishes to fix issues</li>
+								</ul>
+							</div>
+							<div class="col-md-6 mobile-hide">
+								<img src="images/givers.jpg" alt="" class="image-radius">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-6">
+						<div class="row">
+							<div class="col-md-6 mobile-hide">
+								<img src="images/receivers.png" alt="" class="image-radius">
+							</div>
+							<div class="col-md-6 col-sm-12">
+								<h3>Receivers</h3>
+								<p>
+									Add our badge in your projects on Github, even if was forgotten in time, and you will be able to get <strong>Support</strong> or <strong>Wishes</strong> (e.g. new features) from the OS community.
+									
+								</p>
+								<ul>
+									<li><i class="tip"></i>Import your projects from GitHub</li>
+									<li><i class="tip"></i>Add your custom badges</li>
+									<li><i class="tip"></i>Improve projects through wishes</li>
+									<li><i class="tip"></i>Start to get support</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="container benefits" id="how-uses">
+			<div class="row text-center">
+				<div class="col-md-12">
+					<h2>Why use Beerpay</h2>
+				</div>
+				<div class="col-sm-6 col-md-4">
+					<i class="iconf-benefits">&#xe624;</i>
+					<h3>Simple</h3>
+					<p>
+						Get <a href="#">Stripe</a> account and Beerpay will do the rest.
+					</p>
+				</div>
+				<div class="col-sm-6 col-md-4">
+					<i class="iconf-benefits">&#xe649;</i>
+					<h3>Free like the Sun</h3>
+					<p>
+						Beerpay is a free service for any developer who want to be free.
+					</p>
+				</div>
+				<div class="col-sm-6 col-md-4">
+					<i class="iconf-benefits">&#xe617;</i>
+					<h3>Anonymous</h3>
+					<p>
+						You can send money with <a href="">Stripe</a> or anonymous <a href="">Stripe</a> to any project.
+					</p>
+				</div>
+				<div class="col-sm-6 col-md-4">
+					<i class="iconf-benefits">&#xe63e;</i>
+					<h3>Wishes</h3>
+					<p>
+						With your <strong>Wishes</strong>, make a
+						<strong>Project</strong> grow!
+					</p>
+				</div>
+				<div class="col-sm-6 col-md-4">
+					<i class="iconf-benefits">&#xe647;</i>
+					<h3>Support</h3>
+					<p>
+						Support a project and motivate to continue development!
+					</p>
+				</div>
+				<div class="col-sm-6 col-md-4">
+					<i class="iconf-benefits">&#xe607;</i>
+					<h3>Bitcoin</h3>
+					<p>
+						Also send Support with Bitcoin!
+					</p>
+				</div>
+			</div>
+		</section>
+		<section class="container-fluid beerpay-badge" id="badge">
+			<div class="col-md-12 text-center">
+				<h2>Cheers for our Freedom!</h2>
+				<div class="img-container">
+					<img src="images/beerpay-logo-white.svg" alt="">
+					<img src="images/beerpay-logo-white.svg" alt="">
+				</div>
+				<h4>Add our custom badges</h4>
+				<a href="#"><img src="images/beerpay-badges.jpg" alt=""></a>
+			</div>
+		</section>
+		<section class="container keep-touch" id="contact">
+			<div class="col-md-12 text-center">
+				<h2>Get in touch</h2>
+				<ul>
+					<li>
+						<a href="#" class="weibo"><i class="iconf-contact">&#xe653;</i></a>
+					</li>
+					<li>
+						<a href="#" class="wechat"><i class="iconf-contact">&#xe636;</i></a>
+					</li>
+					<li>
+						<a href="#" class="googleplus"><i class="iconf-contact">&#xe75b;</i></a>
+					</li>
+					<li>
+						<a href="#" class="github"><i class="iconf-contact">&#xe66c;</i></a>
+					</li>
+				</ul>
+				<p>Contact us in any way you want! It will be pleasure.</p>
+				<img src="images/mail.png" alt="">
+			</div>
+		</section>
+		<footer>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="menu-foot col-md-6 col-sm-12">
+						<ul>
+							<li><a href="#">About</a></li>
+							<li><a href="#">FAQs</a></li>
+							<li><a href="#">Terms</a></li>
+							<li><a href="#">Privacy</a></li>
+							<li>
+								<small>
+									Made with <img src="images/love.svg" alt=""> by 
+									<img src="images/hashdog-footer.svg" alt="">
+								</small>
+							</li>
+						</ul>
+					</div>
+					<div class="copyright col-md-6 col-sm-12">
+						<small>
+							© 2016 <i class="tip"></i> 
+							<span class="beerpay-foot-mark">beerpay</span>
+						</small>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script src="js/jquery-1.12.1.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,92 @@
+@media screen and (max-width: 780px){
+	.mobile-hide {
+		display: none;
+	}
+	footer .menu-foot {
+		text-align: center;
+		float: none;
+	}
+	footer .copyright {
+		text-align: center;
+		float: none;
+		margin-top: 5px;
+	}
+	.navbar-brand {
+		display: none;
+	}
+	#navigation .container-fluid {
+		padding: 0;
+	}
+	#navigation .collapse-toogle {
+		display: block;
+		float: left;
+		background: transparent;
+		height: 60px;
+		border: none;
+		margin-left: 10px;
+	}
+	#navigation .collapse-toogle:focus {
+		outline: none;
+	}
+	#navigation .collapse-toogle img {
+		width: 40px;
+		height: 40px;
+		padding: 0 auto;
+	}
+	#navigation .navbar-collapse{
+		border: none;
+		margin: 0;
+		padding: 0;
+	}
+	#navigation ul {
+		margin: 0;
+		padding: 0;
+	}
+	.navbar-fixed-top .navbar-collapse {
+		max-height: 420px;
+	}
+	#navigation .btn-mobile {
+		display: block;
+	}
+	#navigation .btn-pc {
+		display: none;
+	}
+	#navigation .btn-sign-up {
+		height: 60px;
+		float: right;
+		padding: 8px 5px;
+	}
+	#navigation .btn-sign-up .btn-f {
+		height: 44px;
+	}
+}
+@media screen and (max-width: 480px){
+	/*bg-home*/
+	.bg-home {
+		text-align: center;
+	}
+	.title-home {
+		padding-top: 10%;
+		font-size: 50pt;
+	}
+	.bg-home .container h2 {
+		font-size: 20pt;
+		margin: 35px 0 30px;
+	}
+	.bg-home .container p {
+		max-width: 100%!important;
+	}
+	.bg-home .container button {
+		font-size: 16pt;
+	}
+	.bg-home .pay-opensource {
+		font-size: 12pt;
+	}
+	.beerpay-badge .img-container img {
+		width: 170px;
+		height: 170px;
+	}
+	.beerpay-badge .img-container img:nth-child(2) {
+		margin-left: -60px;
+	}
+}
